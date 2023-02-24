@@ -1,1 +1,2 @@
 https://github.com/startbootstrap/startbootstrap-sb-admin
+https://startbootstrap.com/template/sb-admin
