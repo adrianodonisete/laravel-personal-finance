@@ -1,6 +1,10 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\Finance\EntryController;
+use App\Http\Controllers\Pages\Templates;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +24,8 @@ Route::get('/', function () {
 Route::get('/teste', function () {
     return view('layout.sb-admin');
 });
+
+
+Route::get('/entry/insert', [EntryController::class, 'insertEntries']);
+
+Route::get('/pages/{page}', [Templates::class, 'show']);

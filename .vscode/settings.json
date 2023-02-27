@@ -1,0 +1,10 @@
+{
+    "prettier.printWidth": 120,
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "*.html": "blade.php",
+        "*.tpl": "blade.php"
+    },
+    "php.validate.executablePath": "/usr/bin/php8.2"
+    // "php.validate.executablePath": "docker run --rm php:8.2-fpm php"
+}
