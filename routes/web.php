@@ -6,16 +6,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Finance\EntryController;
 use App\Http\Controllers\Pages\Templates;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,6 +16,8 @@ Route::get('/teste', function () {
 });
 
 
-Route::get('/entry/insert', [EntryController::class, 'insertEntries']);
+Route::get('/entry/first', [EntryController::class, 'firstStep'])->name('entry.first');
+Route::post('/entry/second', [EntryController::class, 'secondStep'])->name('entry.second');
+Route::get('/entry/results', [EntryController::class, 'firstStep'])->name('entry.results');
 
 Route::get('/pages/{page}', [Templates::class, 'show']);

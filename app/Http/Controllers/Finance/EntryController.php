@@ -15,8 +15,13 @@ class EntryController extends Controller
         $this->request = $request;
     }
 
-    public function insertEntries(): View
+    public function firstStep(): View
     {
-        return view('layout.sb-admin', ['content' => 'Cadastro de entradas']);
+        return view('entry.first', ['title' => 'Cadastro de entradas - Passo 1']);
+    }
+
+    public function secondStep(): View
+    {
+        return view('entry.second', ['title' => 'Cadastro de entradas - Passo 2']);
     }
 }
