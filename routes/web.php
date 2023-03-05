@@ -8,11 +8,11 @@ use App\Http\Controllers\Pages\Templates;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('entry.first'));
 });
 
-Route::get('/teste', function () {
-    return view('layout.sb-admin');
+Route::get('/welcome', function () {
+    return view('welcome');
 });
 
 

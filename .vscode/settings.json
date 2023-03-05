@@ -6,6 +6,7 @@
         "*.tpl": "blade.php"
     },
     "php.validate.executablePath": "/usr/bin/php8.2",
-    "bladeFormatter.misc.dontShowNewVersionMessage": true
+    "bladeFormatter.misc.dontShowNewVersionMessage": true,
+    "prettier.arrowParens": "avoid"
     // "php.validate.executablePath": "docker run --rm php:8.2-fpm php"
 }

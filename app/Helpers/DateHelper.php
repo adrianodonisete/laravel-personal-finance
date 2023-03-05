@@ -28,6 +28,9 @@ class DateHelper
 
     public static function parseDate(string $date, $format = 'd/m/Y'): string
     {
+        if (strpos($date, '/') !== false) {
+            $date = self::parseDateBrToMssql($date);
+        }
         return date($format, strtotime($date));
     }
 

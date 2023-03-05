@@ -1,7 +1,6 @@
 @extends('layout.main', ['page' => 'entry.second'])
 
 @section('title', $title)
-{{-- @section('page', 'entry.second') --}}
 
 @section('content')
     <main>
