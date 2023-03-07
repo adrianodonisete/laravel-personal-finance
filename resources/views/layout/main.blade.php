@@ -11,6 +11,10 @@
 
     <link href="{{ asset('assets/css/sb-admin/styles.css') }}" rel="stylesheet">
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+    @hasSection('css')
+        @yield('css')
+    @endif
 </head>
 
 <body>
@@ -49,7 +53,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
-    <script src="{{ asset('assets/js/sb-admin/scripts.js') }}"></script>
+    <script src="{{ asset('assets/js/sb-admin/scripts.js') }}" defer></script>
+
+    @hasSection('javascript')
+        @yield('javascript')
+    @endif
 </body>
 
 </html>

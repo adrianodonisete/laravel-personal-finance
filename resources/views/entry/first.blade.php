@@ -19,8 +19,8 @@
                                 <div class="row mb-3">
                                     <div class="col-md-12">
                                         <div class="form-floating mb-3 mb-md-0">
-                                            <textarea class="form-control" name="list_entries" id="list_entries" style="height:500px;"></textarea>
-                                            <label for="list_entries">Colar entradas</label>
+                                            <textarea class="form-control" name="list_operations" id="list_operations" style="height:500px;"></textarea>
+                                            <label for="list_operations">Colar entradas e saídas</label>
                                         </div>
                                     </div>
                                 </div>
@@ -40,4 +40,8 @@
             </div>
         </div>
     </main>
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('assets/js/sb-admin/first-step.js?vs=' . date('hi')) }}" defer></script>
 @endsection
