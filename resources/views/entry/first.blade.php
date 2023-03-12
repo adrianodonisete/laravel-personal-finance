@@ -13,7 +13,13 @@
                         </div>
 
                         <div class="card-body">
-                            <form id="" action="{{ route('entry.second') }}" method="post">
+                            <div id="show-error" style="display:none;">
+                                <h3 class="alert alert-danger">
+                                    Preencha as entradas e saídas
+                                </h3>
+                            </div>
+
+                            <form id="frm-entries" action="{{ route('entry.second') }}" method="post">
                                 @csrf
 
                                 <div class="row mb-3">
@@ -27,7 +33,7 @@
 
                                 <div class="mt-4 mb-0">
                                     <div class="d-grid">
-                                        <button type="submit" class="btn btn-primary btn-block">
+                                        <button type="button" id="bt-submit" class="btn btn-primary btn-block">
                                             Seguir para o passo 2
                                         </button>
                                     </div>
@@ -43,5 +49,5 @@
 @endsection
 
 @section('javascript')
-    <script src="{{ asset('assets/js/sb-admin/first-step.js?vs=' . date('hi')) }}" defer></script>
+    <script src="{{ asset('assets/js/sb-admin/first-step.js?vs=' . config('assets.version')) }}" defer></script>
 @endsection

@@ -2,3 +2,26 @@ https://github.com/startbootstrap/startbootstrap-sb-admin
 https://startbootstrap.com/template/sb-admin
 
 https://docs.google.com/spreadsheets/d/1vF7iZcAJHTMLPAOZOYzc6d4murKtC99D52rfbRn1hl4/edit#gid=0
+
+
+
+
+expenses;expense_compras;Master Super-ct Ados;04/11/2020;R$ 1.059,03
+expenses;expense_alimentacao;Ifood;05/11/2020;R$ 19,45
+expenses;expense_alimentacao;Zoop;05/11/2020;R$ 2,00
+expenses;expense_alimentacao;Ifood;06/11/2020;R$ 2.014,90
+expenses;expense_alimentacao;Zxperiences;06/11/2020;R$ 80,55
+expenses;expense_alimentacao;Adriata;07/11/2020;R$ 37,00
+expenses;expense_alimentacao;Master Super-ct Ados;09/11/2020;R$ 62,18
+expenses;expense_alimentacao;Picpay *dukabecasalao;11/11/2020;R$ 1.050,00
+expenses;expense_alimentacao;Ifood;12/11/2020;R$ 21,79
+expenses;expense_alimentacao;Zoop;12/11/2020;R$ 2,00
+expenses;expense_alimentacao;Ifood;13/11/2020;R$ 21,89
+entries;entry_dividendos;RENDIMENTOS VILG11;16/11/2020;R$ 5,46
+entries;entry_dividendos;DIVIDENDOS ITUB3;03/11/2020;R$ 5,88
+entries;entry_dividendos;JUROS S/ CAP. BBDC3;03/11/2020;R$ 5,91
+entries;entry_dividendos;RENDIMENTOS XPML11;25/11/2020;R$ 6,30
+entries;entry_dividendos;RENDIMENTOS VISC11;16/11/2020;R$ 8,62
+entries;entry_dividendos;RENDIMENTOS MXRF11;16/11/2020;R$ 10,92
+entries;entry_dividendos;RENDIMENTOS HGBS11;16/11/2020;R$ 12,80
+entries;entry_dividendos;RENDIMENTOS BBPO11;16/11/2020;R$ 2.012,98

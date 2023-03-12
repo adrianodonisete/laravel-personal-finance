@@ -9,8 +9,9 @@
     <meta name="author" content="">
     <title>Personal Finance - @yield('title')</title>
 
-    <link href="{{ asset('assets/css/sb-admin/styles.css') }}" rel="stylesheet">
-    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="{{ asset('assets/css/sb-admin/styles.css?vs=' . config('assets.version')) }}" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js?vs={{ config('assets.version') }}"
+        crossorigin="anonymous"></script>
 
     @hasSection('css')
         @yield('css')
@@ -51,9 +52,10 @@
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-    </script>
-    <script src="{{ asset('assets/js/sb-admin/scripts.js') }}" defer></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js?vs={{ config('assets.version') }}"
+        crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/js/sb-admin/scripts.js?vs=' . config('assets.version')) }}" defer></script>
 
     @hasSection('javascript')
         @yield('javascript')

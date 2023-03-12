@@ -25,3 +25,4 @@ window.addEventListener('DOMContentLoaded', event => {
 
 // general methods app Personal Finance
 const qs = query => document.body.querySelector(query) || undefined;
+const qAll = query => document.body.querySelectorAll(query) || undefined;

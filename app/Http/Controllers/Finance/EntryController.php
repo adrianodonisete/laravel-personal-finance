@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Finance;
 
 use App\Http\Controllers\Controller;
-use App\Models\Finance\FinanceModel;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
+
+use App\Models\Finance\FinanceModel;
+use App\Models\Finance\FinanceDTO;
 
 class EntryController extends Controller
 {
@@ -26,7 +28,18 @@ class EntryController extends Controller
         $list_operations = $this->request->input('list_operations', '');
 
         $finance = new FinanceModel();
-        $array_operations = $finance->makeArrayOperations($list_operations);
+        $all = $finance->makeArrayOperations($list_operations);
+
+        $array_operations = [];
+        foreach ($all as $operation) {
+            $array_operations[] = new FinanceDTO([
+                'operation_type' => $operation[0],
+                'category' => $operation[1],
+                'detail' => $operation[2],
+                'operation_date' => $operation[3],
+                'operation_value' => $operation[4],
+            ]);
+        }
 
         return view('entry.second', [
             'title' => 'Cadastro de entradas - Passo 2',

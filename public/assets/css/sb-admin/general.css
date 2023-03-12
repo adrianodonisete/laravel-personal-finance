@@ -1,0 +1,9 @@
+.v-middle {
+    vertical-align: middle;
+}
+
+select[readonly] {
+    background: #eee;
+    pointer-events: none;
+    touch-action: none;
+}
