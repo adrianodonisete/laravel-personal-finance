@@ -18,6 +18,6 @@ Route::get('/welcome', function () {
 
 Route::get('/entry/first', [EntryController::class, 'firstStep'])->name('entry.first');
 Route::post('/entry/second', [EntryController::class, 'secondStep'])->name('entry.second');
-Route::get('/entry/results', [EntryController::class, 'firstStep'])->name('entry.results');
+Route::post('/entry/results', [EntryController::class, 'results'])->name('entry.results');
 
 Route::get('/pages/{page}', [Templates::class, 'show']);

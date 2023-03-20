@@ -22,6 +22,8 @@
                         </div>
                         <div class="card-body">
                             <form id="frm-entries" action="{{ route('entry.results') }}" method="post">
+                                @csrf
+
                                 <table id="table-operations" class="table table-success table-hover">
                                     <thead>
                                         <tr>
@@ -56,9 +58,29 @@
                                             @endphp
                                             <tr id="tr_{{ $key }}">
                                                 <td class="text-center v-middle">
-                                                    <button class="btn btn-sm btn-danger" id="del_{{ $key }}">
+                                                    <button type="button" class="btn btn-sm btn-danger btn-delete"
+                                                        id="del_{{ $key }}" data-key="{{ $key }}">
                                                         <i class="fas fa-trash"></i>
                                                     </button>
+
+                                                    <div id="box_{{ $key }}" class="box-confirm-delete"
+                                                        style="display:none;">
+                                                        <button type="button"
+                                                            class="btn btn-sm btn-danger btn-confirm-delete"
+                                                            id="confirm_del_{{ $key }}"
+                                                            data-key="{{ $key }}" style="font-size:9px;">
+                                                            <i class="fas fa-trash"></i>
+                                                            <span>Confirmar</span>
+                                                        </button>
+                                                        <br>
+                                                        <button type="button"
+                                                            class="btn btn-sm btn-primary btn-cancel-delete"
+                                                            id="cancel_del_{{ $key }}"
+                                                            data-key="{{ $key }}" style="font-size:9px;">
+                                                            <i class="fas fa-times"></i>
+                                                            <span>Cancelar</span>
+                                                        </button>
+                                                    </div>
                                                 </td>
                                                 <td class="text-center v-middle">
                                                     {{ $showNumber }}
@@ -159,7 +181,9 @@
 
                                 <div class="mt-4 mb-0">
                                     <div class="d-grid">
-                                        <a class="btn btn-primary btn-block" href="javascript:;">Calcular</a>
+                                        <button type="submit" class="btn btn-primary btn-block">
+                                            Calcular
+                                        </button>
                                     </div>
                                 </div>
                             </form>

@@ -46,4 +46,18 @@ class EntryController extends Controller
             'array_operations' => $array_operations,
         ]);
     }
+
+    public function results(): View
+    {
+        $name_file = $this->request->input('name_file', 'new_month_' . date('Y_m_d'));
+        $all = $this->request->input();
+
+        $finance = new FinanceModel();
+        $results = $finance->makeResults($all);
+
+        return view('entry.results', [
+            'title' => 'Resultado arquivo: ' . $name_file,
+            'results' => $results,
+        ]);
+    }
 }
