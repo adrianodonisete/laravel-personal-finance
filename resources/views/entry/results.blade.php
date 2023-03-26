@@ -19,7 +19,8 @@
                             @endphp
 
 
-                            <table id="table-operations" class="table table-success table-hover">
+                            <table class="table table-success table-hover"
+                                id="table-operations">
                                 <thead>
                                     <tr>
                                         <th>Descrição</th>
@@ -93,6 +94,26 @@
 
                             </table>
 
+                            <div class="mt-5">
+                                <form action="{{ route('download.csv') }}"
+                                    method="post"
+                                    target="_blank">
+                                    @csrf
+
+                                    <input id="name_file"
+                                        name="name_file"
+                                        type="hidden"
+                                        value="{{ $name_file }}">
+
+                                    <textarea id="content_file_csv"
+                                        name="content_file_csv"
+                                        style="visibility:hidden;">{{ $contentFile }}</textarea>
+
+                                    <button class="btn btn-primary"
+                                        type="submit">Salvar Arquivo</button>
+                                </form>
+                            </div>
+
                         </div>
 
                     </div>
@@ -103,5 +124,6 @@
 @endsection
 
 @section('javascript')
-    <script src="{{ asset('assets/js/sb-admin/first-step.js?vs=' . config('assets.version')) }}" defer></script>
+    <script src="{{ asset('assets/js/sb-admin/first-step.js?vs=' . config('assets.version')) }}"
+        defer></script>
 @endsection

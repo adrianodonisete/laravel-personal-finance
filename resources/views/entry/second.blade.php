@@ -21,10 +21,13 @@
                             <h3 class="text-center font-weight-light my-4">{{ $title }}</h3>
                         </div>
                         <div class="card-body">
-                            <form id="frm-entries" action="{{ route('entry.results') }}" method="post">
+                            <form id="frm-entries"
+                                action="{{ route('entry.results') }}"
+                                method="post">
                                 @csrf
 
-                                <table id="table-operations" class="table table-success table-hover">
+                                <table class="table table-success table-hover"
+                                    id="table-operations">
                                     <thead>
                                         <tr>
                                             <th class="text-center">Ação</th>
@@ -41,12 +44,16 @@
                                         <tr>
                                             <td colspan="7">
                                                 <div class="mt-2 mb-3 row">
-                                                    <label for="inputPassword" class="col-sm-2 col-form-label">
+                                                    <label class="col-sm-2 col-form-label"
+                                                        for="inputPassword">
                                                         Nome do Arquivo
                                                     </label>
                                                     <div class="col-sm-6">
-                                                        <input type="text" class="form-control" name="name_file"
-                                                            id="name_file" value="{{ 'finance_month_' . date('Y_m_d') }}">
+                                                        <input class="form-control"
+                                                            id="name_file"
+                                                            name="name_file"
+                                                            type="text"
+                                                            value="{{ 'finance_month_' . date('Y_m_d') }}">
                                                     </div>
                                                 </div>
                                             </td>
@@ -58,25 +65,30 @@
                                             @endphp
                                             <tr id="tr_{{ $key }}">
                                                 <td class="text-center v-middle">
-                                                    <button type="button" class="btn btn-sm btn-danger btn-delete"
-                                                        id="del_{{ $key }}" data-key="{{ $key }}">
+                                                    <button class="btn btn-sm btn-danger btn-delete"
+                                                        id="del_{{ $key }}"
+                                                        data-key="{{ $key }}"
+                                                        type="button">
                                                         <i class="fas fa-trash"></i>
                                                     </button>
 
-                                                    <div id="box_{{ $key }}" class="box-confirm-delete"
+                                                    <div class="box-confirm-delete"
+                                                        id="box_{{ $key }}"
                                                         style="display:none;">
-                                                        <button type="button"
-                                                            class="btn btn-sm btn-danger btn-confirm-delete"
+                                                        <button class="btn btn-sm btn-danger btn-confirm-delete"
                                                             id="confirm_del_{{ $key }}"
-                                                            data-key="{{ $key }}" style="font-size:9px;">
+                                                            data-key="{{ $key }}"
+                                                            type="button"
+                                                            style="font-size:9px;">
                                                             <i class="fas fa-trash"></i>
                                                             <span>Confirmar</span>
                                                         </button>
                                                         <br>
-                                                        <button type="button"
-                                                            class="btn btn-sm btn-primary btn-cancel-delete"
+                                                        <button class="btn btn-sm btn-primary btn-cancel-delete"
                                                             id="cancel_del_{{ $key }}"
-                                                            data-key="{{ $key }}" style="font-size:9px;">
+                                                            data-key="{{ $key }}"
+                                                            type="button"
+                                                            style="font-size:9px;">
                                                             <i class="fas fa-times"></i>
                                                             <span>Cancelar</span>
                                                         </button>
@@ -88,11 +100,13 @@
                                                 <td>
                                                     <div class="w-100 p-1">
 
-                                                        <select class="form-select" readonly="readonly" tabindex="-1"
+                                                        <select class="form-select"
+                                                            id="operation_type_{{ $key }}"
+                                                            name="operation_type[{{ $key }}]"
                                                             aria-disabled="true"
                                                             aria-label="operation_type {{ $key }}"
-                                                            id="operation_type_{{ $key }}"
-                                                            name="operation_type[{{ $key }}]">
+                                                            tabindex="-1"
+                                                            readonly="readonly">
                                                             @foreach (\App\Enums\Operation::cases() as $status)
                                                                 <option value="{{ $status->name }}"
                                                                     @if ($operation->operation_type == $status->name) selected @endif>
@@ -107,9 +121,9 @@
                                                     <div class="w-100 p-1">
 
                                                         <select class="form-select sel-category"
-                                                            aria-label="category {{ $key }}"
                                                             id="category_{{ $key }}"
                                                             name="category[{{ $key }}]"
+                                                            aria-label="category {{ $key }}"
                                                             operation-type="operation_type_{{ $key }}">
 
                                                             <optgroup label="Entradas">
@@ -139,25 +153,29 @@
                                                 </td>
                                                 <td>
                                                     <div class="w-100 p-1">
-                                                        <input type="text" class="form-control"
+                                                        <input class="form-control"
                                                             id="detail_{{ $key }}"
                                                             name="detail[{{ $key }}]"
+                                                            type="text"
                                                             value="{!! $strHelper::cleanInput($operation->detail) !!}">
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="w-100 p-1">
-                                                        <input type="date" class="form-control"
+                                                        <input class="form-control"
                                                             id="operation_date_{{ $key }}"
-                                                            name="operation_date[{{ $key }}]" lang="pt-BR"
-                                                            value="{!! $strHelper::cleanInput($operation->operation_date) !!}">
+                                                            name="operation_date[{{ $key }}]"
+                                                            type="date"
+                                                            value="{!! $strHelper::cleanInput($operation->operation_date) !!}"
+                                                            lang="pt-BR">
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="w-100 p-1">
-                                                        <input type="text" class="form-control"
+                                                        <input class="form-control"
                                                             id="operation_value_{{ $key }}"
                                                             name="operation_value[{{ $key }}]"
+                                                            type="text"
                                                             value="{!! $strHelper::cleanInput($operation->operation_value) !!}">
                                                     </div>
                                                 </td>
@@ -181,7 +199,8 @@
 
                                 <div class="mt-4 mb-0">
                                     <div class="d-grid">
-                                        <button type="submit" class="btn btn-primary btn-block">
+                                        <button class="btn btn-primary btn-block"
+                                            type="submit">
                                             Calcular
                                         </button>
                                     </div>
@@ -196,9 +215,11 @@
 @endsection
 
 @section('css')
-    <link href="{{ asset('assets/css/sb-admin/general.css?vs=' . config('assets.version')) }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/sb-admin/general.css?vs=' . config('assets.version')) }}"
+        rel="stylesheet">
 @endsection
 
 @section('javascript')
-    <script src="{{ asset('assets/js/sb-admin/second-step.js?vs=' . config('assets.version')) }}" defer></script>
+    <script src="{{ asset('assets/js/sb-admin/second-step.js?vs=' . config('assets.version')) }}"
+        defer></script>
 @endsection

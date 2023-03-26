@@ -1,13 +1,11 @@
 {
     "prettier.printWidth": 120,
     "editor.formatOnSave": true,
-    "files.associations": {
-        "*.html": "blade.php",
-        "*.tpl": "blade.php"
-    },
     "php.validate.executablePath": "/usr/bin/php8.2",
     "bladeFormatter.misc.dontShowNewVersionMessage": true,
     "prettier.arrowParens": "avoid",
-    "prettier.singleQuote": true
-    // "php.validate.executablePath": "docker run --rm php:8.2-fpm php"
+    "prettier.singleQuote": true,
+    "bladeFormatter.format.wrapLineLength": 120,
+    "bladeFormatter.format.wrapAttributes": "force",
+    "bladeFormatter.format.sortHtmlAttributes": "code-guide"
 }

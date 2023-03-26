@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Finance;
 
 use App\Http\Controllers\Controller;
+use App\Models\Files\MakeCsv;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 
@@ -55,9 +56,13 @@ class EntryController extends Controller
         $finance = new FinanceModel();
         $results = $finance->makeResults($all);
 
+        $contentFile = MakeCsv::makeContentFile($all);
+
         return view('entry.results', [
             'title' => 'Resultado arquivo: ' . $name_file,
+            'name_file' => $name_file,
             'results' => $results,
+            'contentFile' => $contentFile,
         ]);
     }
 }
